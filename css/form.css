@@ -52,3 +52,7 @@ label:focus-within > span,
 input:not(:placeholder-shown) + span {
   transform: translateY(0px);
 }
+
+.error {
+  border-bottom: 1px solid red;
+}

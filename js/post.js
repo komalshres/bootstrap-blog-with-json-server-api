@@ -4,7 +4,15 @@ const postId = url.get("post-id");
 fetch(`http://localhost:3000/posts/${postId}`)
   .then((response) => response.json())
   .then((post) => {
-    const { title, publishedAt, author, img, body, category, content } = post;
+    const {
+      title,
+      publishedAt,
+      author,
+      img_featured,
+      body,
+      category,
+      content,
+    } = post;
     document.querySelector("title").innerText = `${title} - Blog`;
 
     document.querySelector("article").innerHTML = `<header class="mb-4">
@@ -15,21 +23,25 @@ fetch(`http://localhost:3000/posts/${postId}`)
       Posted on ${publishedAt} by ${author}
     </div>
     <!-- Post categories-->
-    ${category
-      .map((cate) => {
-        return `<a
+    ${
+      category
+        ? category
+            .map((cate) => {
+              return `<a
       class="badge bg-secondary text-decoration-none link-light"
       href="#!"
       >${cate}</a
     >`;
-      })
-      .join("\n")}
+            })
+            .join("\n")
+        : ""
+    }
   </header>
   <!-- Preview image figure-->
   <figure class="mb-4">
     <img
       class="img-fluid rounded"
-      src=${img}
+      src=${img_featured}
       alt="..."
     />
   </figure>
