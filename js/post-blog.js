@@ -6,6 +6,9 @@ const postBlog = () => {
   const body = document.getElementById("post").value;
   const img_thumb = document.getElementById("thumbnail").value;
   const img_featured = document.getElementById("featured").value;
+  const content = document.getElementsByClassName("note-editable")[0].innerHTML;
+
+  console.log(content);
 
   const months = [
     "January",
@@ -39,8 +42,10 @@ const postBlog = () => {
       img_thumb,
       img_featured,
       publishedAt: `${month} ${day}, ${year}`,
+      content,
     }),
   });
+  alert(`Blog Posted`);
 };
 
 form.addEventListener("submit", (e) => {

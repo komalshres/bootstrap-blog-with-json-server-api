@@ -43,10 +43,9 @@ button {
 
 textarea {
   outline: none;
-  border: none;
+
   resize: none;
   width: 100%;
-  padding-top: 30px;
 }
 label:focus-within > span,
 input:not(:placeholder-shown) + span {
