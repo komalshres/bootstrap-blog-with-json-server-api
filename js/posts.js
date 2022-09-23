@@ -18,7 +18,7 @@ const getPost = () =>
     <p class="card-text">
       ${body.slice(0, 300)}...
     </p>
-    <a class="btn btn-primary" href="#!">Read more →</a>
+    <a class="btn btn-primary" href="/post.html?post-id=${id}">Read more →</a>
   </div>`;
 
       let postHTML1 = "";
@@ -37,7 +37,7 @@ const getPost = () =>
           <p class="card-text">
             ${post.body.slice(0, 200)}...
           </p>
-          <a class="btn btn-primary" href="/post?post-id=${
+          <a class="btn btn-primary" href="/post.html?post-id=${
             post.id
           }">Read more →</a>
         </div>
@@ -49,4 +49,3 @@ const getPost = () =>
     });
 
 export default getPost;
-

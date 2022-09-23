@@ -1,0 +1,54 @@
+form {
+  width: 90vw;
+  max-width: 768px;
+  border: 1px solid #ddd;
+  padding: 3vw;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+}
+
+label {
+  margin-bottom: 15px;
+  position: relative;
+  border-bottom: 1px solid #ddd;
+}
+input {
+  width: 100%;
+  padding: 10px 0px;
+  margin-top: 20px;
+  border: none;
+  outline: none;
+}
+input::placeholder {
+  opacity: 0;
+}
+span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(30px);
+  font-size: 0.825em;
+  transition-duration: 300ms;
+}
+button {
+  padding: 15px 0px;
+  margin-top: 20px;
+  color: #fff;
+  border: 1px solid;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all 0.5s ease;
+}
+
+textarea {
+  outline: none;
+  border: none;
+  resize: none;
+  width: 100%;
+  padding-top: 30px;
+}
+label:focus-within > span,
+input:not(:placeholder-shown) + span {
+  transform: translateY(0px);
+}
