@@ -1,14 +1,18 @@
+import getCategory from "/js/category.js";
+
+getCategory();
+
 const url = new URLSearchParams(window.location.search);
 const postId = url.get("post-id");
 
-fetch(`http://localhost:3000/posts/${postId}`)
+fetch(`https://admin.nextjavascript.com/fake-api/posts/${postId}`)
   .then((response) => response.json())
   .then((post) => {
     const {
       title,
-      publishedAt,
+      pulished_date,
       author,
-      img_featured,
+      featured_image,
       body,
       category,
       content,
@@ -20,7 +24,7 @@ fetch(`http://localhost:3000/posts/${postId}`)
     <h1 class="fw-bolder mb-1">${title}</h1>
     <!-- Post meta content-->
     <div class="text-muted fst-italic mb-2">
-      Posted on ${publishedAt} by ${author}
+      Posted on ${pulished_date} by ${author}
     </div>
     <!-- Post categories-->
     ${
@@ -41,7 +45,7 @@ fetch(`http://localhost:3000/posts/${postId}`)
   <figure class="mb-4">
     <img
       class="img-fluid rounded"
-      src=${img_featured}
+      src=${featured_image}
       alt="..."
     />
   </figure>

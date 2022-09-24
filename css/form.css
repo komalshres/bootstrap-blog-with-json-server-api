@@ -49,6 +49,7 @@ textarea {
 }
 label:focus-within > span,
 input:not(:placeholder-shown) + span {
+  color: #0d6efd;
   transform: translateY(0px);
 }
 

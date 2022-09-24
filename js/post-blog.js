@@ -1,3 +1,7 @@
+import getCategory from "/js/category.js";
+
+getCategory();
+
 const form = document.querySelector("form");
 
 const postBlog = () => {
@@ -63,17 +67,19 @@ form.addEventListener("submit", (e) => {
   //     error("thumbnail") &&
   //     error("featured")
   //   )
-  postBlog();
+
+  if (error()) {
+    postBlog();
+  }
 });
 
-// const error = (id) => {
-//   const el = document.getElementById(id).value;
+const error = () => {
+  const el = document.getElementsByClassName("note-editable")[0].innerHTML;
 
-//   if (el.length === 0) {
-//     console.log("here");
-//     document.getElementById(id).classList.add("error");
-//   } else {
-//     document.getElementById(id).classList.remove("error");
-//     return true;
-//   }
-// };
+  if (el.length < 500) {
+    console.log("here");
+    alert("Content minimum characters = 500");
+  } else {
+    return true;
+  }
+};
